@@ -8,16 +8,11 @@
  * @format
  */
 
-import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import Tabs from './adapter/presentation/navigation/bottom_navi';
+import TabBar from './adapter/presentation/navigation/bottom_tabbar';
 
 const App = () => {
-  return (
-    <NavigationContainer>
-      <Tabs />
-    </NavigationContainer>
-  );
+  return <TabBar barColor="pink" />;
 };
 
 export default App;
