@@ -1,15 +1,15 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
 import {
   BottomTabBar,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
-import {TabBarAdvancedButton} from '../components/Atoms/bottom_navi_fab';
-import EmptyView from '../views/empty_view';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {NavigationContainer} from '@react-navigation/native';
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import {getBottomSpace} from 'react-native-iphone-x-helper';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {TabBarAdvancedButton} from '../components/atoms/bottom_navi_fab';
+import EmptyView from '../views/empty_view';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +20,7 @@ type Props = {
 const TabBar = ({barColor}: Props) => (
   <NavigationContainer>
     <Tab.Navigator
-      tabBar={props => (
+      tabBar={(props) => (
         <View style={styles.navigatorContainer}>
           {DeviceInfo.hasNotch() && (
             <View
@@ -62,7 +62,7 @@ const TabBar = ({barColor}: Props) => (
         name="Barcode"
         component={EmptyView}
         options={{
-          tabBarButton: props => (
+          tabBarButton: (props) => (
             <TabBarAdvancedButton
               bgColor={barColor}
               iconName={'barcode'}
